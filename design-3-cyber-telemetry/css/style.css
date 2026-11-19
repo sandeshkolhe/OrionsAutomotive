@@ -1,0 +1,450 @@
+/* ===================================================================
+   DESIGN 3: CYBER VELOCITY & TELEMETRY LAB
+   Orionis Automotive Pvt Ltd - "Your One-Stop Destination for Car Upkeep"
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+:root {
+  --cyber-bg: #050811;
+  --cyber-card: rgba(11, 17, 32, 0.85);
+  --cyber-panel: #0d1527;
+  
+  --neon-cyan: #00f0ff;
+  --neon-cyan-glow: rgba(0, 240, 255, 0.25);
+  --neon-blue: #3b82f6;
+  --neon-purple: #8b5cf6;
+  
+  --border-neon: rgba(0, 240, 255, 0.2);
+  --border-active: #00f0ff;
+
+  --text-white: #f1f5f9;
+  --text-dim: #94a3b8;
+  --text-dark: #050811;
+
+  --font-title: 'Space Grotesk', sans-serif;
+  --font-text: 'Outfit', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+
+  --radius-hud: 6px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-text);
+  background-color: var(--cyber-bg);
+  color: var(--text-white);
+  line-height: 1.6;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Global Switcher Bar */
+.global-switcher-strip {
+  background: #000000;
+  border-bottom: 1px solid var(--neon-cyan);
+  padding: 8px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.82rem;
+}
+
+.switcher-pills {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.switcher-pill {
+  padding: 4px 12px;
+  border-radius: var(--radius-hud);
+  text-decoration: none;
+  font-family: var(--font-code);
+  font-size: 0.78rem;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  color: #94a3b8;
+  transition: all 0.2s ease;
+}
+
+.switcher-pill:hover {
+  border-color: var(--neon-cyan);
+  color: #ffffff;
+}
+
+.switcher-pill.active {
+  background: var(--neon-cyan);
+  color: var(--text-dark);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px var(--neon-cyan-glow);
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.cyber-header {
+  background: rgba(5, 8, 17, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-neon);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 84px;
+}
+
+.cyber-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cyber-icon {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--neon-cyan);
+  border-radius: var(--radius-hud);
+  background: rgba(0, 240, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neon-cyan);
+  font-size: 1.3rem;
+  box-shadow: 0 0 15px var(--neon-cyan-glow);
+}
+
+.brand-text-block h1 {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.brand-text-block h1 span {
+  color: var(--neon-cyan);
+}
+
+.brand-text-block span {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+.cyber-nav {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.cyber-nav a {
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cyber-nav a:hover {
+  color: var(--neon-cyan);
+}
+
+/* Hero */
+.cyber-hero {
+  padding: 85px 0 100px;
+  position: relative;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hud-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 14px;
+  border: 1px solid var(--neon-cyan);
+  background: rgba(0, 240, 255, 0.08);
+  color: var(--neon-cyan);
+  font-family: var(--font-code);
+  font-size: 0.78rem;
+  border-radius: var(--radius-hud);
+  margin-bottom: 20px;
+}
+
+.cyber-title {
+  font-family: var(--font-title);
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.cyber-title span {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 25px var(--neon-cyan-glow);
+}
+
+.cyber-tagline {
+  font-family: var(--font-code);
+  font-size: 1.15rem;
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+.cyber-desc {
+  color: var(--text-dim);
+  font-size: 1.08rem;
+  margin-bottom: 34px;
+  max-width: 580px;
+}
+
+.hud-btn-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cyber-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  border-radius: var(--radius-hud);
+  font-family: var(--font-code);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cyber-btn-cyan {
+  background: var(--neon-cyan);
+  color: var(--text-dark);
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 0 0 20px var(--neon-cyan-glow);
+}
+
+.cyber-btn-cyan:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px var(--neon-cyan-glow);
+}
+
+.cyber-btn-outline {
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+}
+
+.cyber-btn-outline:hover {
+  background: rgba(0, 240, 255, 0.1);
+}
+
+/* Telemetry Dashboard Box */
+.hud-telemetry-box {
+  background: var(--cyber-card);
+  border: 1px solid var(--border-neon);
+  border-radius: var(--radius-hud);
+  padding: 24px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.telemetry-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-neon);
+  padding: 14px;
+  border-radius: var(--radius-hud);
+}
+
+.telemetry-card span {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  color: #64748b;
+  display: block;
+}
+
+.telemetry-card strong {
+  font-family: var(--font-code);
+  font-size: 1.15rem;
+  color: var(--neon-cyan);
+}
+
+/* Sections */
+.cyber-section {
+  padding: 90px 0;
+}
+
+.cyber-section-alt {
+  background: #090e1c;
+  border-top: 1px solid var(--border-neon);
+  border-bottom: 1px solid var(--border-neon);
+}
+
+.cyber-head {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 60px;
+}
+
+.cyber-head h2 {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  margin: 12px 0;
+}
+
+.cyber-head p {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+}
+
+.pillars-4-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.hud-service-card {
+  background: var(--cyber-card);
+  border: 1px solid var(--border-neon);
+  border-radius: var(--radius-hud);
+  padding: 32px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.hud-service-card:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 25px var(--neon-cyan-glow);
+  transform: translateY(-4px);
+}
+
+.hud-code-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  color: var(--neon-cyan);
+}
+
+.hud-service-card h3 {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.hud-service-card p {
+  color: var(--text-dim);
+  font-size: 0.94rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.hud-checklist {
+  list-style: none;
+}
+
+.hud-checklist li {
+  font-family: var(--font-code);
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.hud-checklist li i {
+  color: var(--neon-cyan);
+  margin-top: 3px;
+}
+
+/* Workshop Hub */
+.cyber-hub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.cyber-info-box {
+  background: var(--cyber-card);
+  border: 1px solid var(--border-neon);
+  border-radius: var(--radius-hud);
+  padding: 36px;
+}
+
+.gst-cyber-badge {
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid var(--neon-cyan);
+  padding: 16px;
+  border-radius: var(--radius-hud);
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gst-cyber-badge code {
+  font-family: var(--font-code);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+}
+
+/* Footer */
+.cyber-footer {
+  background: #020409;
+  border-top: 1px solid var(--border-neon);
+  padding: 40px 0;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-family: var(--font-code);
+}
+
+.cyber-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .hero-layout, .pillars-4-grid, .cyber-hub-grid {
+    grid-template-columns: 1fr;
+  }
+}

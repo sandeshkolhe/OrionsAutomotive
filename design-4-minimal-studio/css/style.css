@@ -1,0 +1,356 @@
+/* ===================================================================
+   DESIGN 4: MINIMALIST STUDIO & ARCHITECTURAL ATELIER
+   Orionis Automotive Pvt Ltd - "Your One-Stop Destination for Car Upkeep"
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --studio-bg: #fafaf9;
+  --studio-card: #ffffff;
+  --studio-border: #e7e5e4;
+  --studio-dark: #1c1917;
+  --studio-muted: #57534e;
+  --studio-accent: #c2410c; /* Warm terracotta rust */
+  --studio-accent-light: #ffedd5;
+
+  --font-heading: 'Syne', sans-serif;
+  --font-text: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-text);
+  background-color: var(--studio-bg);
+  color: var(--studio-dark);
+  line-height: 1.6;
+}
+
+/* Global Switcher Bar */
+.global-switcher-strip {
+  background: #1c1917;
+  color: #fff;
+  border-bottom: 1px solid #292524;
+  padding: 8px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.82rem;
+}
+
+.switcher-pills {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.switcher-pill {
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.78rem;
+  border: 1px solid #44403c;
+  color: #a8a29e;
+  transition: all 0.2s ease;
+}
+
+.switcher-pill:hover {
+  border-color: #fdba74;
+  color: #ffffff;
+}
+
+.switcher-pill.active {
+  background: var(--studio-accent);
+  color: #ffffff;
+  border-color: var(--studio-accent);
+}
+
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Studio Header */
+.studio-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--studio-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 84px;
+}
+
+.brand-block h1 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.brand-block h1 span {
+  color: var(--studio-accent);
+}
+
+.brand-block span {
+  font-size: 0.72rem;
+  color: var(--studio-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+}
+
+.studio-nav {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.studio-nav a {
+  text-decoration: none;
+  color: var(--studio-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.studio-nav a:hover {
+  color: var(--studio-accent);
+}
+
+/* Studio Hero */
+.studio-hero {
+  padding: 90px 0;
+  border-bottom: 1px solid var(--studio-border);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.tagline-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--studio-accent-light);
+  color: var(--studio-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+.studio-hero h2 {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+}
+
+.studio-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--studio-accent);
+  margin-bottom: 18px;
+}
+
+.studio-hero p {
+  color: var(--studio-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.btn-minimal {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-dark {
+  background: var(--studio-dark);
+  color: #fff;
+}
+
+.btn-dark:hover {
+  background: var(--studio-accent);
+}
+
+.btn-outline {
+  border: 1px solid var(--studio-border);
+  color: var(--studio-dark);
+  background: #fff;
+}
+
+.btn-outline:hover {
+  border-color: var(--studio-accent);
+  color: var(--studio-accent);
+}
+
+.hero-image-frame {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--studio-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.hero-image-frame img {
+  width: 100%;
+  display: block;
+}
+
+/* 4 Pillars Section */
+.studio-section {
+  padding: 85px 0;
+}
+
+.section-title-wrap {
+  margin-bottom: 50px;
+}
+
+.section-title-wrap h3 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.studio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.studio-card {
+  background: var(--studio-card);
+  border: 1px solid var(--studio-border);
+  padding: 36px;
+  border-radius: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.studio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+  border-color: var(--studio-accent);
+}
+
+.card-num {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--studio-accent);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.studio-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+}
+
+.studio-card p {
+  color: var(--studio-muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.studio-specs {
+  list-style: none;
+}
+
+.studio-specs li {
+  font-size: 0.88rem;
+  color: var(--studio-muted);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.studio-specs li i {
+  color: var(--studio-accent);
+  margin-top: 4px;
+  font-size: 0.8rem;
+}
+
+/* Studio Workshop & GST */
+.studio-hub {
+  border-top: 1px solid var(--studio-border);
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.hub-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.gst-callout {
+  background: var(--studio-bg);
+  border: 1px solid var(--studio-border);
+  padding: 16px 20px;
+  border-radius: 4px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gst-callout code {
+  font-weight: 700;
+  color: var(--studio-accent);
+  font-size: 1.1rem;
+}
+
+/* Footer */
+.studio-footer {
+  background: #1c1917;
+  color: #a8a29e;
+  padding: 40px 0;
+  font-size: 0.85rem;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .hero-grid, .studio-grid, .hub-layout {
+    grid-template-columns: 1fr;
+  }
+}

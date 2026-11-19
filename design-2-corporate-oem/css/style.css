@@ -1,0 +1,440 @@
+/* ===================================================================
+   DESIGN 2: CORPORATE GERMAN ENGINEERING & OEM TECH
+   Orionis Automotive Pvt Ltd - "Your One-Stop Destination for Car Upkeep"
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg-body: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f1f5f9;
+  
+  --primary-blue: #1e40af;
+  --accent-blue: #2563eb;
+  --accent-light: #eff6ff;
+  --border-light: #e2e8f0;
+  --border-dark: #cbd5e1;
+
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #64748b;
+  --text-white: #ffffff;
+
+  --font-main: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-body);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Global Switcher Bar */
+.global-switcher-strip {
+  background: #0f172a;
+  border-bottom: 2px solid var(--accent-blue);
+  padding: 8px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.82rem;
+}
+
+.switcher-pills {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.switcher-pill {
+  padding: 4px 12px;
+  border-radius: var(--radius-xs);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.78rem;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  transition: all 0.2s ease;
+}
+
+.switcher-pill:hover {
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+.switcher-pill.active {
+  background: var(--accent-blue);
+  color: #ffffff;
+  border-color: var(--accent-blue);
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Corporate Top Navbar */
+.corp-header {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.brand-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-emblem {
+  width: 44px;
+  height: 44px;
+  background: var(--primary-blue);
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.brand-text h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.brand-text span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  display: block;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+.corp-nav {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.corp-nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.corp-nav a:hover {
+  color: var(--accent-blue);
+}
+
+/* Hero */
+.corp-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: #ffffff;
+  padding: 85px 0;
+}
+
+.corp-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.corp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: var(--radius-xs);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.corp-hero h2 {
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.corp-tagline {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: #93c5fd;
+  margin-bottom: 18px;
+}
+
+.corp-hero p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  margin-bottom: 28px;
+  line-height: 1.65;
+}
+
+.corp-btn-group {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.corp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-xs);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.corp-btn-primary {
+  background: var(--accent-blue);
+  color: #ffffff;
+  border: 1px solid var(--accent-blue);
+}
+
+.corp-btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.corp-btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.corp-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.corp-spec-card {
+  background: var(--bg-surface);
+  color: var(--text-dark);
+  border-radius: var(--radius-sm);
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.spec-header {
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spec-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.88rem;
+}
+
+.spec-row span {
+  color: var(--text-muted);
+}
+
+.spec-row strong {
+  color: var(--text-dark);
+  font-family: var(--font-mono);
+}
+
+/* 4 Pillars Section */
+.corp-section {
+  padding: 80px 0;
+}
+
+.corp-section-alt {
+  background: var(--bg-subtle);
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px;
+}
+
+.section-intro h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.section-intro p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.corp-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.corp-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-top: 4px solid var(--accent-blue);
+  border-radius: var(--radius-xs);
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.corp-card h4 {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.corp-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.corp-features-list {
+  list-style: none;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.corp-features-list li {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.corp-features-list li i {
+  color: var(--accent-blue);
+  margin-top: 3px;
+}
+
+/* OEM Table */
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+  background: #fff;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.matrix-table th, .matrix-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.88rem;
+}
+
+.matrix-table th {
+  background: var(--bg-subtle);
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+/* Facility & GST Details */
+.corp-facility-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.facility-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 32px;
+  border-radius: var(--radius-xs);
+}
+
+.gst-highlight {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent-blue);
+  padding: 14px 18px;
+  margin: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gst-highlight strong {
+  font-family: var(--font-mono);
+  color: var(--primary-blue);
+  font-size: 1.1rem;
+}
+
+/* Footer */
+.corp-footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 40px 0;
+  font-size: 0.85rem;
+}
+
+.corp-footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .corp-hero-grid, .corp-pillars-grid, .corp-facility-grid {
+    grid-template-columns: 1fr;
+  }
+}
