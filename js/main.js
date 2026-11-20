@@ -1,12 +1,18 @@
 /* ===================================================================
    ORIONIS AUTOMOTIVE PVT LTD - CORE INTERACTIVE ENGINE
-   Handles Theme Switching, Glasurit Paint Visualizer, Before/After Slider,
-   Cost Estimator, Modal Dialogs & Form Actions
+   High-Precision Automotive Workshop, BASF Glasurit Paint Lab,
+   OEM Validation Telemetry & Artefact Coatings
+   Andheri East, Mumbai | GSTIN: 27AABCP1386M1Z3
    =================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initThemeEngine();
+  // Clear any legacy theme flags from previous sessions
+  try {
+    localStorage.removeItem('orionis_theme');
+  } catch (e) {}
+
   initMobileNav();
+  initScrollFeatures();
   initGlasuritVisualizer();
   initBeforeAfterSlider();
   initCostEstimator();
@@ -16,45 +22,87 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------------------------
-   1. Theme Switching Engine (Apex Dark, OEM Clean, Cyber Velocity)
+   1. Header Scroll, Active Nav & Back-to-Top
 -------------------------------------------------- */
-function initThemeEngine() {
-  const themeBtns = document.querySelectorAll('.theme-pill-btn');
-  const body = document.body;
-  const currentThemeLabel = document.getElementById('current-theme-label');
+function initScrollFeatures() {
+  const header = document.querySelector('.site-header');
+  const scrollTopBtn = document.getElementById('scroll-to-top');
+  const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+  const sections = document.querySelectorAll('main section[id]');
 
-  // Load saved theme or default to apex-dark
-  const savedTheme = localStorage.getItem('orionis_theme') || 'apex-dark';
-  applyTheme(savedTheme);
+  function handleScroll() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-  themeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetTheme = btn.dataset.theme;
-      applyTheme(targetTheme);
-      showToast(`Switched to: ${btn.textContent.trim()} Design`);
-    });
-  });
-
-  function applyTheme(themeKey) {
-    if (themeKey === 'apex-dark') {
-      body.removeAttribute('data-theme');
-    } else {
-      body.setAttribute('data-theme', themeKey);
+    // Header styling on scroll
+    if (header) {
+      if (scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     }
 
-    localStorage.setItem('orionis_theme', themeKey);
-
-    themeBtns.forEach(btn => {
-      if (btn.dataset.theme === themeKey) {
-        btn.classList.add('active');
-        if (currentThemeLabel) {
-          currentThemeLabel.textContent = btn.dataset.name || btn.textContent.trim();
-        }
+    // Scroll to Top visibility
+    if (scrollTopBtn) {
+      if (scrollY > 400) {
+        scrollTopBtn.classList.add('show');
       } else {
-        btn.classList.remove('active');
+        scrollTopBtn.classList.remove('show');
+      }
+    }
+
+    // Active nav link highlight based on scroll position
+    let currentSectionId = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 140;
+      const sectionHeight = section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        currentSectionId = section.getAttribute('id');
       }
     });
+
+    if (currentSectionId) {
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${currentSectionId}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
   }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Initial run
+
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // Smooth scroll offset for all internal anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#' || !targetId.startsWith('#')) return;
+
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        const headerHeight = header ? header.offsetHeight : 80;
+        const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 }
 
 /* --------------------------------------------------
@@ -201,7 +249,7 @@ function initCostEstimator() {
       const serviceText = serviceSelect.options[serviceSelect.selectedIndex].text;
       const costText = costOutput ? costOutput.textContent : '';
 
-      openBookingModal(`Booking: ${vehicleText} - ${serviceText} (Approx ${costText})`);
+      openBookingModal(`Estimate Booking: ${vehicleText} | ${serviceText} (Approx ${costText})`);
     });
   }
 }
@@ -253,13 +301,12 @@ function initFaqAccordion() {
 }
 
 /* --------------------------------------------------
-   8. Modal, Form Handlers & WhatsApp Quick Action
+   8. Modal, Form Handlers & Notifications
 -------------------------------------------------- */
 function initModalAndForms() {
   const modal = document.getElementById('booking-modal');
   const closeBtn = document.querySelector('.modal-close-btn');
   const openTriggers = document.querySelectorAll('.trigger-modal-btn');
-  const modalServiceField = document.getElementById('modal-service-input');
   const contactForm = document.getElementById('main-contact-form');
   const modalForm = document.getElementById('modal-booking-form');
 
@@ -282,6 +329,12 @@ function initModalAndForms() {
         modal.classList.remove('active');
       }
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
   }
 
   // Handle Main Contact Form
@@ -290,7 +343,6 @@ function initModalAndForms() {
       e.preventDefault();
       const name = contactForm.querySelector('input[name="name"]')?.value || 'Client';
       const phone = contactForm.querySelector('input[name="phone"]')?.value || '';
-      const service = contactForm.querySelector('select[name="service"]')?.value || 'Service';
 
       showToast(`Thank you, ${name}! Your request has been logged. Our workshop team will contact you at ${phone}.`);
       contactForm.reset();
@@ -302,7 +354,7 @@ function initModalAndForms() {
     modalForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = modalForm.querySelector('input[name="m_name"]')?.value || 'Client';
-      showToast(`Appointment confirmed for ${name}. Confirmation SMS sent to your number!`);
+      showToast(`Service appointment booked for ${name}! Our Mumbai workshop team will confirm shortly.`);
       if (modal) modal.classList.remove('active');
       modalForm.reset();
     });
@@ -321,7 +373,7 @@ function openBookingModal(serviceContext) {
 }
 
 /* --------------------------------------------------
-   Toast Notification Helper
+   9. Toast Notification Helper
 -------------------------------------------------- */
 function showToast(message) {
   let toast = document.querySelector('.toast-notice');
@@ -331,10 +383,10 @@ function showToast(message) {
     document.body.appendChild(toast);
   }
 
-  toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color:var(--accent-primary)"></i> <span>${message}</span>`;
+  toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color:var(--accent-primary); font-size:1.1rem;"></i> <span>${message}</span>`;
   toast.classList.add('show');
 
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 4000);
+  }, 4500);
 }

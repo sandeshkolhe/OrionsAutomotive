@@ -17,40 +17,23 @@
   <!-- Ambient Grid Overlay -->
   <div class="bg-grid-overlay"></div>
 
-  <!-- Design Switcher & Quick Contact Bar -->
-  <aside class="design-bar" aria-label="Design Switcher">
-    <div class="design-info">
-      <i class="fa-solid fa-folder-tree" style="color:var(--accent-primary);"></i>
-      <span><strong>5 Standalone Design Folders Available:</strong></span>
-    </div>
+  <!-- Executive Utility & Verified Credentials Bar -->
+  <aside class="top-utility-bar" aria-label="Facility Credentials and Quick Contact">
+    <div class="container top-utility-inner">
+      <div class="top-credentials">
+        <span class="cred-pill"><i class="fa-solid fa-certificate"></i> Official BASF Glasurit Partner</span>
+        <span class="cred-divider">|</span>
+        <span class="cred-text"><i class="fa-solid fa-location-dot"></i> Andheri East, Mumbai</span>
+        <span class="cred-divider">|</span>
+        <span class="cred-text"><i class="fa-solid fa-clock"></i> Mon–Sat: 9:00 AM – 7:30 PM</span>
+      </div>
 
-    <div class="design-switcher-pills">
-      <a href="design-1/index.html" class="theme-pill-btn" style="text-decoration:none;">
-        <span class="theme-indicator-dot" style="background:#e6a122;"></span>
-        Folder 1: Luxury Apex
-      </a>
-      <a href="design-2/index.html" class="theme-pill-btn" style="text-decoration:none;">
-        <span class="theme-indicator-dot" style="background:#2563eb;"></span>
-        Folder 2: Corporate OEM
-      </a>
-      <a href="design-3/index.html" class="theme-pill-btn" style="text-decoration:none;">
-        <span class="theme-indicator-dot" style="background:#00f0ff;"></span>
-        Folder 3: Cyber Telemetry
-      </a>
-      <a href="design-4/index.html" class="theme-pill-btn" style="text-decoration:none;">
-        <span class="theme-indicator-dot" style="background:#c2410c;"></span>
-        Folder 4: Minimal Studio
-      </a>
-      <a href="design-5/index.html" class="theme-pill-btn" style="text-decoration:none;">
-        <span class="theme-indicator-dot" style="background:#e11d48;"></span>
-        Folder 5: Motorsport Red
-      </a>
-    </div>
-
-    <div class="topbar-contacts">
-      <a href="tel:+918655022122"><i class="fa-solid fa-phone"></i> +91 86550 22122</a>
-      <a href="mailto:accounts@orionis.co.in"><i class="fa-solid fa-envelope"></i> accounts@orionis.co.in</a>
-      <span style="color:var(--accent-primary);"><i class="fa-solid fa-id-card"></i> GST: 27AABCP1386M1Z3</span>
+      <div class="top-contacts">
+        <a href="tel:+918655022122" class="top-contact-link"><i class="fa-solid fa-phone-volume"></i> <span>+91 86550 22122</span></a>
+        <a href="https://wa.me/918655022122?text=Hello%20Orionis%20Automotive,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener" class="top-contact-link top-wa"><i class="fa-brands fa-whatsapp"></i> <span>WhatsApp Support</span></a>
+        <a href="mailto:accounts@orionis.co.in" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <span>accounts@orionis.co.in</span></a>
+        <span class="top-gst-badge"><i class="fa-solid fa-building-columns"></i> GSTIN: 27AABCP1386M1Z3</span>
+      </div>
     </div>
   </aside>
 
@@ -95,13 +78,14 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="hero-glow-bg"></div>
+      <div class="hero-glow-bg-2"></div>
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="badge badge-glow">
-            <i class="fa-solid fa-award"></i> BASF Glasurit Certified · OEM Validation Facility · Andheri East, Mumbai
+            <i class="fa-solid fa-certificate"></i> Official BASF Glasurit Partner · OEM Testing Facility · Andheri East, Mumbai
           </div>
 
-          <h1>Precision Engineering. <br><span class="gradient-text">Master Refinishing.</span></h1>
+          <h1>Precision Automotive Engineering. <br><span class="gradient-text">Master Refinishing & Validation.</span></h1>
           
           <div class="hero-tagline-quote">
             <i class="fa-solid fa-quote-left" style="font-size:0.9rem; opacity:0.6;"></i>
@@ -116,8 +100,8 @@
             <a href="#estimator" class="btn btn-primary">
               <i class="fa-solid fa-calculator"></i> Calculate Service Estimate
             </a>
-            <a href="#oem-testing" class="btn btn-outline">
-              <i class="fa-solid fa-microchip"></i> OEM Validation Specs
+            <a href="#services" class="btn btn-outline">
+              <i class="fa-solid fa-shield-halved"></i> 4 Core Disciplines
             </a>
             <a href="https://wa.me/918655022122?text=Hello%20Orionis%20Automotive,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn btn-whatsapp" rel="noopener">
               <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
@@ -137,6 +121,10 @@
               <div class="metric-number">35+</div>
               <div class="metric-label">OEM Validation Programs</div>
             </div>
+            <div class="metric-item">
+              <div class="metric-number">4.9 ★</div>
+              <div class="metric-label">Customer Satisfaction</div>
+            </div>
           </div>
         </div>
 
@@ -145,7 +133,7 @@
           <div class="hero-visual-header">
             <div class="status-live">
               <span class="pulse-dot"></span>
-              <span>12 WORKSHOP BAYS ACTIVE</span>
+              <span>12 WORKSHOP BAYS ACTIVE · LEVEL-5 DUST-FREE BOOTH</span>
             </div>
             <span class="badge" style="font-size:0.75rem;">MUMBAI FACILITY</span>
           </div>
@@ -195,52 +183,59 @@
       </div>
     </section>
 
-    <!-- 5 Standalone Design Folders Showcase Bar -->
-    <section class="section" style="padding: 40px 0; background: var(--bg-card); border-bottom: 1px solid var(--border-color);">
+    <!-- Engineering Excellence & Differentiators Strip -->
+    <section class="excellence-strip" aria-label="Why Choose Orionis Automotive">
       <div class="container">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-          <div>
-            <span class="badge" style="margin-bottom:6px;"><i class="fa-solid fa-folder-tree"></i> 5 Separate Design Folders Created</span>
-            <h3 style="font-size:1.6rem; color:var(--text-main);">Explore All 5 Independent Website Designs</h3>
+        <div class="excellence-grid">
+          <div class="excellence-card">
+            <div class="excellence-icon-box">
+              <i class="fa-solid fa-wind"></i>
+            </div>
+            <div class="excellence-content">
+              <h4>Italian Downdraft Booth</h4>
+              <p>Positive-pressure climate control with 65°C heated baking cycles for zero-dust mirror finish.</p>
+            </div>
           </div>
-          <span style="color:var(--text-muted); font-size:0.9rem;">Each design has its own folder, CSS stylesheet, and JavaScript.</span>
-        </div>
 
-        <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:16px;">
-          <a href="design-1/index.html" style="background:var(--bg-secondary); border:1px solid rgba(245,158,11,0.3); border-radius:var(--radius-sm); padding:18px; text-decoration:none; display:flex; flex-direction:column; gap:8px; transition:transform 0.2s;">
-            <span style="font-size:0.75rem; color:#f59e0b; font-weight:800; text-transform:uppercase;">FOLDER 1</span>
-            <strong style="color:#fff; font-size:1rem;">Luxury Apex</strong>
-            <span style="font-size:0.75rem; color:var(--text-muted);">Titanium & Amber Gold Supercar Atelier</span>
-            <span class="badge" style="background:#f59e0b; color:#000; margin-top:8px; font-size:0.7rem; justify-content:center;">Open Folder 1 <i class="fa-solid fa-arrow-right"></i></span>
-          </a>
+          <div class="excellence-card">
+            <div class="excellence-icon-box">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div class="excellence-content">
+              <h4>Glasurit 90 Line Waterborne</h4>
+              <p>Certified low-VOC German waterborne refinishing with spectrophotometer 100% color matching.</p>
+            </div>
+          </div>
 
-          <a href="design-2/index.html" style="background:var(--bg-secondary); border:1px solid rgba(37,99,235,0.3); border-radius:var(--radius-sm); padding:18px; text-decoration:none; display:flex; flex-direction:column; gap:8px; transition:transform 0.2s;">
-            <span style="font-size:0.75rem; color:#38bdf8; font-weight:800; text-transform:uppercase;">FOLDER 2</span>
-            <strong style="color:#fff; font-size:1rem;">Corporate OEM</strong>
-            <span style="font-size:0.75rem; color:var(--text-muted);">German Engineering & B2B Testing Portal</span>
-            <span class="badge" style="background:#2563eb; color:#fff; margin-top:8px; font-size:0.7rem; justify-content:center;">Open Folder 2 <i class="fa-solid fa-arrow-right"></i></span>
-          </a>
+          <div class="excellence-card">
+            <div class="excellence-icon-box">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="excellence-content">
+              <h4>OEM Validation Protocol</h4>
+              <p>Biometric-secured confidential bays, multi-axis NVH telemetry & fleet durability testing.</p>
+            </div>
+          </div>
 
-          <a href="design-3/index.html" style="background:var(--bg-secondary); border:1px solid rgba(0,240,255,0.3); border-radius:var(--radius-sm); padding:18px; text-decoration:none; display:flex; flex-direction:column; gap:8px; transition:transform 0.2s;">
-            <span style="font-size:0.75rem; color:#00f0ff; font-weight:800; text-transform:uppercase;">FOLDER 3</span>
-            <strong style="color:#fff; font-size:1rem;">Cyber Telemetry</strong>
-            <span style="font-size:0.75rem; color:var(--text-muted);">Futuristic HUD & Diagnostics Lab</span>
-            <span class="badge" style="background:#00f0ff; color:#000; margin-top:8px; font-size:0.7rem; justify-content:center;">Open Folder 3 <i class="fa-solid fa-arrow-right"></i></span>
-          </a>
+          <div class="excellence-card">
+            <div class="excellence-icon-box">
+              <i class="fa-solid fa-monument"></i>
+            </div>
+            <div class="excellence-content">
+              <h4>Artefact & Sculpture Lab</h4>
+              <p>Marine-grade anti-corrosion barriers & museum UV-absorbers for civic architectural monuments.</p>
+            </div>
+          </div>
 
-          <a href="design-4/index.html" style="background:var(--bg-secondary); border:1px solid rgba(194,65,12,0.3); border-radius:var(--radius-sm); padding:18px; text-decoration:none; display:flex; flex-direction:column; gap:8px; transition:transform 0.2s;">
-            <span style="font-size:0.75rem; color:#fdba74; font-weight:800; text-transform:uppercase;">FOLDER 4</span>
-            <strong style="color:#fff; font-size:1rem;">Minimal Studio</strong>
-            <span style="font-size:0.75rem; color:var(--text-muted);">Architectural Sand & Fine Sculpture</span>
-            <span class="badge" style="background:#c2410c; color:#fff; margin-top:8px; font-size:0.7rem; justify-content:center;">Open Folder 4 <i class="fa-solid fa-arrow-right"></i></span>
-          </a>
-
-          <a href="design-5/index.html" style="background:var(--bg-secondary); border:1px solid rgba(225,29,72,0.3); border-radius:var(--radius-sm); padding:18px; text-decoration:none; display:flex; flex-direction:column; gap:8px; transition:transform 0.2s;">
-            <span style="font-size:0.75rem; color:#e11d48; font-weight:800; text-transform:uppercase;">FOLDER 5</span>
-            <strong style="color:#fff; font-size:1rem;">Motorsport Red</strong>
-            <span style="font-size:0.75rem; color:var(--text-muted);">Rosso Corsa High Performance Pitlane</span>
-            <span class="badge" style="background:#e11d48; color:#fff; margin-top:8px; font-size:0.7rem; justify-content:center;">Open Folder 5 <i class="fa-solid fa-arrow-right"></i></span>
-          </a>
+          <div class="excellence-card">
+            <div class="excellence-icon-box">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="excellence-content">
+              <h4>Registered & Inspected</h4>
+              <p>100% transparent job cards, genuine OEM parts warranty & verified GSTIN: 27AABCP1386M1Z3.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -458,6 +453,7 @@
               <button class="swatch-btn" style="background:#e6a122;" data-color="#e6a122" data-name="Solar Amber Gold" data-code="GLASURIT 90-Y12" title="Amber Gold"></button>
               <button class="swatch-btn" style="background:#18181b;" data-color="#18181b" data-name="Stealth Obsidian Black" data-code="GLASURIT 90-K99" title="Obsidian Black"></button>
               <button class="swatch-btn" style="background:#e2e8f0;" data-color="#e2e8f0" data-name="Carrara Pure White" data-code="GLASURIT 90-W01" title="Pure White"></button>
+              <button class="swatch-btn" style="background:#64748b;" data-color="#64748b" data-name="Daytona Nardo Grey" data-code="GLASURIT 90-G42" title="Daytona Grey"></button>
               <button class="swatch-btn" style="background:#0284c7;" data-color="#0284c7" data-name="Riviera Electric Azure" data-code="GLASURIT 90-B77" title="Electric Azure"></button>
             </div>
 
@@ -962,13 +958,13 @@
         </div>
 
         <div class="footer-col">
-          <h4>Design Themes</h4>
+          <h4>Facility Standards</h4>
           <ul class="footer-links">
-            <li><a href="javascript:void(0)" onclick="document.querySelector('[data-theme=apex-dark]').click()">Apex Titanium (Dark Luxury)</a></li>
-            <li><a href="javascript:void(0)" onclick="document.querySelector('[data-theme=oem-clean]').click()">OEM Clean Tech (Corporate)</a></li>
-            <li><a href="javascript:void(0)" onclick="document.querySelector('[data-theme=cyber-velocity]').click()">Cyber Velocity (Midnight Neon)</a></li>
-            <li><a href="design-corporate.html">View Corporate Layout Page</a></li>
-            <li><a href="design-luxury.html">View Supercar Luxury Layout</a></li>
+            <li><a href="#glasurit"><i class="fa-solid fa-certificate" style="color:var(--accent-primary); font-size:0.8rem;"></i> BASF Glasurit Certified</a></li>
+            <li><a href="#oem-testing"><i class="fa-solid fa-microchip" style="color:var(--accent-primary); font-size:0.8rem;"></i> Confidential OEM Testing Bays</a></li>
+            <li><a href="#services"><i class="fa-solid fa-wrench" style="color:var(--accent-primary); font-size:0.8rem;"></i> 3D Laser Alignment Labs</a></li>
+            <li><a href="#artefacts"><i class="fa-solid fa-monument" style="color:var(--accent-primary); font-size:0.8rem;"></i> Marine-Grade Sculpture Lab</a></li>
+            <li><a href="#workshop"><i class="fa-solid fa-building-columns" style="color:var(--accent-primary); font-size:0.8rem;"></i> Verified GSTIN: 27AABCP1386M1Z3</a></li>
           </ul>
         </div>
 
@@ -1003,6 +999,9 @@
     <a href="tel:+918655022122" class="fab-btn fab-call" title="Call Workshop Now">
       <i class="fa-solid fa-phone"></i>
     </a>
+    <button class="fab-btn fab-scroll-top" id="scroll-to-top" title="Back to top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
   </div>
 
   <!-- Booking & Inquiry Modal -->
